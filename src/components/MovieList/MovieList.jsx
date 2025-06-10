@@ -5,8 +5,8 @@ import './MovieList.css';
 const MovieList = ({movies}) => {
     return(
         <div className="movies-list">
-        {movies.map((movie,index) => (
-            <MovieCard key = {index} data = {movie}/>
+        {movies.map((movie) => (
+            <MovieCard key = {movie} data = {movie}/>
         ))}
         </div>
     );

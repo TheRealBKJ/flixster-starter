@@ -1,18 +1,19 @@
 .movie-card{ 
     background-color: grey;
-    border: 5px solid black;
-    border-radius: 10px;
-    width: 300px;
-    margin-top: 50px;
-    margin-left: 50px;
+    border: 0.625em solid black;
+    border-radius: 0.80em;
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 3%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0.125em 0.3125em rgba(19, 18, 18, 0.1);
+    box-shadow: 0 0.25em 0.625em rgba(248, 0, 0, 0.2);
+    display: inline-block;
     cursor: pointer;
 }
 
 .movie-card:hover{
     transform: scale(1.05); /* Slightly enlarge the card */
-    box-shadow: 0 0.25em 0.625em rgba(248, 0, 0, 0.2); /* Add a shadow for depth */
+     /* Add a shadow for depth */
 }
 
 .title{

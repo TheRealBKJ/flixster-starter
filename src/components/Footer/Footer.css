@@ -1,0 +1,11 @@
+.footer-box{
+    background-color: grey;
+    text-align: end;
+    height: 10vh;
+}
+
+.footer-text{
+    font-family: 'Courier New', Courier, monospace;
+    color: gold;
+    font-weight: bold;
+}

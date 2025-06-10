@@ -1,10 +1,8 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
-
 
 //I put this function in a singular file so i can make edits and use it for other functions easier 
-export async function fetchMovies(page) {
-    const url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`;
+export async function fetchMovies(page = 1, urlSearch) {
+    const url = `${urlSearch}${page}`;
     const options = {
         method: 'GET',
         headers: {
