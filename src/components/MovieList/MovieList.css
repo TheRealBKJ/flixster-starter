@@ -1,7 +1,10 @@
 .movies-list {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(4,1fr) ;
   width: 100%;
-  background-color: #f0f0f0; /* add a background color to see the grid container */
+  background-color: #f0f0f0;
+  border: 5px  solid black;
+  gap: 10px;
 }
 
