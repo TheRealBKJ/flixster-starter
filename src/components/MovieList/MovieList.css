@@ -1,0 +1,7 @@
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(4,1fr) ;
+  width: 100%;
+  background-color: #f0f0f0; /* add a background color to see the grid container */
+}
+
