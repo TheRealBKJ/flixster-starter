@@ -6,21 +6,20 @@ import { fetchMovies } from "./api/fetchMovies.js";
 
 const App = () => {
   const [page, setPage] = useState(1); // set count to 1 because we start at page 1 but holds current page #
-  const [movies,setMovies] = useState([]) //holds movies that have been loaded
+  const [movies,setMovies] = useState([]) //holds movies that have been loaded, //set movies updates movies array:)
 
   
   //new movies fetched get added to array of movies we are displaying currently, useful for loadMore and reusable
   const buildMovies= (newMovies) =>{
-    setMovies(previous => [...previous,...newMovies]);
+    setMovies(previous => [...previous,...newMovies]); //... adds each one to array by appending, so when i call set movies they 
+    // are all added as a movie instead of a nested array, if i did previous neMovies it would be 2+ arrays which would make it multiple nested arrays, AKA movielist doesnt work
   };
 
   //render when page is rendered, [] makes it run once
   useEffect(() => {
-    console.log('fetching for',page);
     fetchMovies(page).then((data) =>{
-      buildMovies(data.results);
+      buildMovies(data.results); //fetch the movies based on page then take results and buildmovies and add to curr array
     }).catch(error =>{
-      console.error('app', error);
     });
   }, [page]);
 
