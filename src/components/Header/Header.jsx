@@ -18,7 +18,6 @@ export default function Header ({sendToApp}) {
         sendToApp(data)
     }
 
-
     return (
         <header className="header">
             <div className = "elements-container">

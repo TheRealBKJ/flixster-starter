@@ -45,7 +45,7 @@ export default function SearchBar({sendData}) {
         className = "input-box"
       />
       <button className="search-button"onClick={searchValues}>Search</button> {/*when search is clicked fetches!*/}
-      <button classname = "clear-button" onClick ={clearValues}>Clear</button>
+      <button className = "clear-button" onClick ={clearValues}>Clear</button>
     </div>
   );
 }
