@@ -9,11 +9,6 @@
     background-color: rgba(0,0,0,0.4);
     font-weight: bold;
 }
-.image-photo{
-    border: 5px solid white;
-    border-radius: 5px;
-}
-
 .modal-background{
     width: 70%;
     margin-left: 15%;
@@ -22,6 +17,24 @@
     border: 5px solid rgba(236, 202, 6);
     border-radius: 10px;
 }
+
+.image-trailer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+}
+.image-photo{
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+.trailer-iframe{
+    height: 20em;
+    border: none;
+}
+
+
 
 .overview{
     font-family: 'Courier New', Courier, monospace;

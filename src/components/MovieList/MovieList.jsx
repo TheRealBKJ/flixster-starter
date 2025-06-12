@@ -8,6 +8,12 @@ import { useEffect } from "react";
 const MovieList = ({movies}) => {
     const [sortedMovies, setSortedMovies] = useState(movies);
 
+    // we are gonna pass up each moviecard that is liked or watched out of sortedMovies
+    //then we pass those arrays into sideBar child component
+    const [likedCards, setLikedCards] = useState([]);
+    const [watchedCards,setWatchedCards] = useState([]);
+
+
     const changeSort = (sortedData =>{
         setSortedMovies(sortedData); //change sortedMovies
     })
