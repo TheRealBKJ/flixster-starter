@@ -9,6 +9,9 @@ const BASE_URL = "https://image.tmdb.org/t/p/w500";
 const MovieCard = ({ data }) => {
 
     const [isModalOpen, setModalOpen] = useState(false);
+    const [isHeartClicked, setIsHeartClicked] = useState(false);
+    const[isWatchClicked, setWatchClicked] = useState(false);
+
     const openModal = () => {
         setModalOpen(true);
     };
@@ -16,6 +19,16 @@ const MovieCard = ({ data }) => {
     const closeModal = () => {
         setModalOpen(false);
     };
+    const handleHeartClick = (event) => {
+        event.stopPropagation(); // prevent click event from bubbling up to parent element
+        // toggle heart button state here
+        setIsHeartClicked(!isHeartClicked);
+    };
+
+    const handleWatchClicked = (event) => {
+        event.stopPropagation();
+        setWatchClicked(!isWatchClicked);
+    }
 
     return (
         <>
@@ -25,9 +38,17 @@ const MovieCard = ({ data }) => {
                     src={`${BASE_URL}${data.poster_path}`}
                     alt={data.title}
                 />
+
                 <div className="movie-box">
                     <h3 className="title">{data.original_title}</h3>
                     <p className="votes">Voting Average: {data.vote_average}</p>
+                </div>
+                <div className="heart-watched">
+                    <button className={`heart ${isHeartClicked ? 'clicked' : ''}`} onClick = {handleHeartClick}>&#10084;</button>
+                    <div className="watch-box">
+                        <input type="checkbox"  className= "checkbox"onClick = {handleWatchClicked} />
+                        <label className ="watched-text">Watched</label>
+                    </div>
                 </div>
             </div>
             {isModalOpen && (

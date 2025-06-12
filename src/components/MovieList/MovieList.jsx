@@ -7,11 +7,6 @@ import { useEffect } from "react";
 //renders the movies, going to use grid for this
 const MovieList = ({movies}) => {
     const [sortedMovies, setSortedMovies] = useState(movies);
-    console.log(sortedMovies);
-
-    useEffect(() => {
-    console.log(sortedMovies);
-    }, [sortedMovies]);
 
     const changeSort = (sortedData =>{
         setSortedMovies(sortedData); //change sortedMovies

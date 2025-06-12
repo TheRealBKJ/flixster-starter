@@ -39,3 +39,38 @@
     width: 100%;
     height: 50%;
 }
+
+.heart-watched{
+    display: flex;
+    justify-content: center;
+}
+
+.heart{
+  color: #ccc; /* default color is gray */
+}
+.heart.clicked{
+  color: #ff69b4; /* turn red when clicked */
+}
+.watch-box{
+    border: 2px solid  rgb(236, 202, 6);
+
+}
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.checkbox:checked {
+    background-color: #66bb6a;
+}
+.watched-text {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+.watched-text:hover {
+    text-decoration: underline;
+}

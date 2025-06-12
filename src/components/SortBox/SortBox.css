@@ -1,0 +1,31 @@
+.sort-box {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.sort-box label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.drop-down {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.drop-down:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.drop-down option {
+  padding: 5px;
+}
