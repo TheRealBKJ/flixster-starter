@@ -16,13 +16,12 @@ const MovieList = ({movies}) => {
     const changeSort = (sortedData =>{
         setSortedMovies(sortedData); //change sortedMovies
     })
-    
     return(
         <div>
-            <SortBox onSort={(changeSort)} movies={movies}/>
+        <SortBox onSort={(changeSort)} movies={movies}/>
             <div className="movies-list">
-            {(movies)?.map((movie) => (
-                <MovieCard key = {movie.id} data = {movie}/>
+            {movies.map((movie) => (
+                <MovieCard key = {movie} data = {movie}/>
             ))}
             </div>
         </div>
