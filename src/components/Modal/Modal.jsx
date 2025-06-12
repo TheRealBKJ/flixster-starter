@@ -72,13 +72,15 @@ export default function Modal({movieId}){
                     <img className="image-photo" src={`${BASE_URL}${movieData.backdrop_path}`} alt={movieData.title} />
                     <p className="release-date">Release Date: {movieData.release_date}</p>
                     <p className="overview">Overview: {movieData.overview}</p>
-                    <p className= "genre-list">Genres:</p>
-                    <ul className="genre-text">
-                        {(movieData.genres)?.map((genre) => (// shoutout StackOVerFLOW, found a fix to the issue of map in seconds
-                            <li key={genre.id}>{genre.name}</li> 
-                        ))} {/* Append list items using map*/}
-                    </ul>
-                    <button className="close-button" onClick = {closeModal}>Close</button>
+                    <div className="close-genre-container">
+                        <ul className="genre-text">
+                            <p className= "genre-header">Genres:</p>
+                            {(movieData.genres)?.map((genre) => (// shoutout StackOVerFLOW, found a fix to the issue of map in seconds
+                                <li key={genre.id}>{genre.name}</li> 
+                            ))} {/* Append list items using map*/}
+                        </ul>
+                        <button className="close-button" onClick = {closeModal}>Close</button>
+                    </div>
                     </div>
                 </div>
             )}
@@ -87,11 +89,5 @@ export default function Modal({movieId}){
 }
         
 
-
-// <ul className="genre-text">
-                    //{movieData.genres.map((genre, index) => (
-                       // <li key={index}>{genre.name}</li>
-                    //))}
-                    //</ul>
 
 

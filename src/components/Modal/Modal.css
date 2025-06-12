@@ -7,13 +7,48 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
-
+    font-weight: bold;
 }
-
+.image-photo{
+    border: 5px solid white;
+    border-radius: 5px;
+}
 
 .modal-background{
     width: 70%;
     margin-left: 15%;
     margin-top: 15%;
     background-color: grey;
+    border: 5px solid rgba(236, 202, 6);
+    border-radius: 10px;
 }
+
+.overview{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    overflow-wrap: break-word;
+
+}
+.close-button {
+    font-size: 1.2rem; 
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: rgba(236, 202, 6);
+    color: rgb(0, 0, 0);
+    border: 5px solid white;
+    border-radius: 5px;
+}
+
+.close-genre-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.genre-text{
+    list-style-type: none;
+    justify-content: center;
+    margin-right: 3%;
+    font-weight: bold;
+}
+
