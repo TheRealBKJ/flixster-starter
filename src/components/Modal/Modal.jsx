@@ -16,7 +16,7 @@ export default function Modal({movieId}){
     const [movieData, setMovieData] = useState([])
     const url = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
 
-        //function to get json data for Modal
+        //function to get json data for Modal, copied from function in files
     const returnDetails = async () => {
         const options = {
         method: 'GET',
@@ -66,7 +66,7 @@ export default function Modal({movieId}){
     return (
         <div>
             {isOpen && movieData && (
-                <div className="modal">
+                <div className="modal" onClick ={closeModal}>
                     <div className ="modal-background">
                     <h2 className="movie-title">{movieData.title}</h2>
                     <img className="image-photo" src={`${BASE_URL}${movieData.backdrop_path}`} alt={movieData.title} />
@@ -79,6 +79,7 @@ export default function Modal({movieId}){
                                 <li key={genre.id}>{genre.name}</li> 
                             ))} {/* Append list items using map*/}
                         </ul>
+                        <div id="runtime">Runtime: {movieData.runtime} Minutes </div>
                         <button className="close-button" onClick = {closeModal}>Close</button>
                     </div>
                     </div>

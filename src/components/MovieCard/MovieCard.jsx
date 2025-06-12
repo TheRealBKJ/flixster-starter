@@ -19,7 +19,7 @@ const MovieCard = ({ data }) => {
 
     return (
         <>
-            <div className="movie-card" onClick={openModal}>
+            <div className="movie-card" onClick={openModal}>{/* wrap entire card in modal to open!*/}
                 <img
                     className="movie-image"
                     src={`${BASE_URL}${data.poster_path}`}
@@ -31,7 +31,7 @@ const MovieCard = ({ data }) => {
                 </div>
             </div>
             {isModalOpen && (
-                <Modal movieId={data.id} onClose={closeModal} />
+                <Modal movieId={data.id} onClose={closeModal} /> //if modal is open call modal and throw it the dataid:)
             )}
         </>
     );
