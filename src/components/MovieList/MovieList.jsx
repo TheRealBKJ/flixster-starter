@@ -21,13 +21,10 @@ const MovieList = ({movies}) => {
     // updates likedCards when moviecard is liked, appends on to the end
     const handleLike = (data) =>{
         setLikedCards((prevLiked) => [...prevLiked,data])
-        console.log(likedCards);
-
     }
     //updates watched cards when moviecard is click as watched ,onto the end
     const handleWatch = (data) =>{
         setWatchedCards((prevWatched) => [...prevWatched,data])
-        console.log(watchedCards);
     }
 
 

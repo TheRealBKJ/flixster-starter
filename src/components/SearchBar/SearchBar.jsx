@@ -26,7 +26,7 @@ export default function SearchBar({sendData}) {
       `https://api.themoviedb.org/3/search/movie?query=${userInput}&include_adult=false&language=en-US&page=`
     ).then((data) => {
       setSearchData(data);
-      console.log(data);
+
       sendData(data); //what we call in the header to return data
     });
   };
@@ -38,7 +38,7 @@ export default function SearchBar({sendData}) {
           `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=`
         ).then((data) => {
           setSearchData(data);
-          console.log(data);
+
           sendData(data); //what we call in the header to return data
         });
   }
