@@ -13,7 +13,6 @@ export default function NowPlaying({ originalData }) {
       `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=`
     ).then((data) => {
       setSearchData(data);
-      console.log(data);
       originalData(data); // return data back to header to pass into app
     });
   };

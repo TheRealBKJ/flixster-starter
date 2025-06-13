@@ -19,7 +19,7 @@ export default function Header ({sendToApp}) {
     return (
         <header className="header">
             <div className = "elements-container">
-                <banner className = "banner">Movies Website</banner>
+                <h1 className = "banner">Movies Website</h1>
                 <SearchBar sendData={handleSearchData}/>
                 <NowPlaying originalData={switchScreen}/> 
             </div>
