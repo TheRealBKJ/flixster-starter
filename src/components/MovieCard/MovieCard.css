@@ -1,5 +1,5 @@
 .movie-card {
-  background-color: grey;
+  background-color: rgb(201, 201, 201);
   border: 0.3em solid rgb(236, 202, 6);
   border-radius: 0.5em;
   transition: transform 0.3s, box-shadow 0.3s;

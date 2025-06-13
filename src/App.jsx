@@ -12,7 +12,7 @@ const App = () => {
     "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=";
   const [page, setPage] = useState(1); // set count to 1 because we start at page 1 but holds current page #
   const [movies, setMovies] = useState([]); //holds movies that have been loaded, set movies updates and movies array
-
+  const[isLoadVisible, setLoadVisisble] = useState(true);
 
 
   //new movies fetched get added to array of movies we are displaying currently, useful for loadMore and reusable
@@ -30,12 +30,13 @@ const App = () => {
     fetchMovies(page, nowPlaying)
       .then((data) => {
         //get movies
-        if (page === 1) {
+        if (page === 1 || undefined) {
           //if first render set movis to first 20
           setMovies(data.results);
         } else {
           buildMovies(data.results); //add more movies on to movielist
         }
+
       })
       .catch((error) => {
         console.error(error); //throw an error for debug
@@ -52,12 +53,18 @@ const App = () => {
       <Header
         sendToApp={(data) => {
           setMovies([]);
+          setLoadVisisble(false)
           buildMovies(data.results); // clears the movies and then appends the new ones whether nowplaying or the search query
         }}
       />
       <MovieList movies={movies} />
       {/* Renders movies using movielist grid and movie cards*/}
-      <button className="load-more" onClick={loadMoreMovies}>Load More</button> {/* Loadmore button*/}
+      {isLoadVisible && 
+        (<button
+          className="load-more"
+          onClick={loadMoreMovies}>
+            Load More
+            </button>)}
       <Footer/>
     </div>
   );
