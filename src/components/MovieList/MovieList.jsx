@@ -61,6 +61,7 @@ const MovieList = ({ movies }) => {
 
             case 'home':
                 setSortedMovies(movies)
+                console.log(movies)
                 setIsSorted(true);
                 break;
 

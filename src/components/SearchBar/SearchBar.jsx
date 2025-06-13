@@ -38,7 +38,7 @@ export default function SearchBar({sendData}) {
           `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=`
         ).then((data) => {
           setSearchData(data);
-
+          setUserInput("")
           sendData(data); //what we call in the header to return data
         });
   }
