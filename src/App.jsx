@@ -17,9 +17,10 @@ const App = () => {
 
   //new movies fetched get added to array of movies we are displaying currently, useful for loadMore and reusable
   const buildMovies = (newMovies) => {
-    setMovies((movies) => [...movies, ...newMovies]); //... adds each one to array by appending, so when i call set movies they
-    // are all added as a movie instead of a nested array, if i did previous neMovies it would be 2+ arrays which would make it multiple nested arrays, AKA movielist doesnt work
-  };
+    const existingMovies = movies.map((movie) => movie.id);
+    const newMoviesToAdd = newMovies.filter((movie) => !existingMovies.includes(movie.id));
+    setMovies((movies) => [...movies, ...newMoviesToAdd]);
+};
 
 
   // IF U HAVE TIME FIX HOW SEARCHBAR RETURNS MOVIES INSTEAD OF QUERY FOR LOADING MOE THAN ONE PAGE
@@ -56,7 +57,7 @@ const App = () => {
           buildMovies(data.results); // clears the movies and then appends the new ones whether nowplaying or the search query
         }}
       />
-      <MovieList movies={movies} />{" "}
+      <MovieList movies={movies} />
       {/* Renders movies using movielist grid and movie cards*/}
       <button className="load-more" onClick={loadMoreMovies}>Load More</button> {/* Loadmore button*/}
       <Footer/>
