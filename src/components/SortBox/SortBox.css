@@ -7,7 +7,9 @@
 .sort-box label {
   margin-right: 10px;
   font-weight: bold;
-  color: #333;
+  color:  rgb(236, 202, 6);
+  background-color: rgb(0, 0, 0);
+  margin-left: 45%;
 }
 
 .drop-down {

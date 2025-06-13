@@ -1,0 +1,17 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(236, 202, 6);
+  justify-content: space-between;
+  padding: 20px; /* added padding for better spacing */
+}
+
+.button {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  height: 40%;
+  margin-bottom: 10px; /* added margin for spacing between buttons */
+  border: none; /* removed default button border */
+  border-radius: 5px; /* added rounded corners */
+  cursor: pointer; /* changed cursor shape on hover */
+}

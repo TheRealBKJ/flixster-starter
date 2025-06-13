@@ -12,7 +12,9 @@ export default function SearchBar({sendData}) {
     const { value } = event.target;
     setUserInput(value);
   };
-  //fetches from movies api and returns the data that matches
+
+
+  //fetches from movies api and returns the data that matches when button is clicked
   const searchValues = () => {
     fetchMovies(
       undefined,
@@ -24,6 +26,7 @@ export default function SearchBar({sendData}) {
     });
   };
 
+  // does same thing as nowplaying with fetching nowPlayign data again
   const clearValues = () => {
     fetchMovies(
           undefined,

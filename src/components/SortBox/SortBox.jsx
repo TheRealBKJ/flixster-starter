@@ -37,7 +37,7 @@ export default function SortBox({onSort, movies}){
 
     return (
         <div className="sort-box">
-            <label>Sort By:</label>
+            <label className="sort-text">Sort By:</label>
             <select 
                 className="drop-down" 
                 value={sortByValue} // Set the value prop
@@ -46,7 +46,7 @@ export default function SortBox({onSort, movies}){
                     sortBy(e.target.value);
                 }}
             >
-                <option disabled value="0">Search By</option>
+                <option disabled value="0">None</option>
                 <option value="title">Title(A-Z)</option>
                 <option value="releaseDate">Most Recent</option>
                 <option value="voteAverage">Vote Average</option>

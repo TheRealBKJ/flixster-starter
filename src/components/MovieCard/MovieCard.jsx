@@ -5,7 +5,7 @@ import { useState } from "react";
 const BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 
-const MovieCard = ({ data }) => {
+const MovieCard = ({ data, onLike, onWatch  }) => {
 
     const [isModalOpen, setModalOpen] = useState(false);
     const [isHeartClicked, setIsHeartClicked] = useState(false);
@@ -22,11 +22,13 @@ const MovieCard = ({ data }) => {
         event.stopPropagation(); // prevent click event from bubbling up to parent element
         // toggle heart button state here
         setIsHeartClicked(!isHeartClicked);
+        onLike(data);
     };
 
     const handleWatchClicked = (event) => {
         event.stopPropagation();
         setWatchClicked(!isWatchClicked);
+        onWatch(data);
     }
 
     return (

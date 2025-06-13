@@ -4,9 +4,9 @@ import "./NowPlaying.css";
 import { fetchMovies } from "../../api/fetchMovies";
 
 export default function NowPlaying({ originalData }) {
-  const [searchData, setSearchData] = useState([]); // to hold the OG data for return later
+  const [searchData, setSearchData] = useState([]); // to hold the Original data for return later
 
-  //fetches from movies api and returns the data that matches
+  //fetches from movies api again, same data 
   const originalValues = () => {
     fetchMovies(
       undefined,
@@ -14,7 +14,7 @@ export default function NowPlaying({ originalData }) {
     ).then((data) => {
       setSearchData(data);
       console.log(data);
-      originalData(data); //what we call in the header to return data
+      originalData(data); // return data back to header to pass into app
     });
   };
 

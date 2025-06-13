@@ -1,13 +1,15 @@
-import React from 'react';
 
+import "./Sidebar.css";
 
+const Sidebar = ({onFilter}) =>{
+    return (
+        <div className ="sidebar">
+            <button  className ="button" onClick = {() => onFilter("home")}>Home</button>
+            <button className ="button" onClick = {() => onFilter("liked")}>Favorites</button>
+            <button  className ="button" onClick = {() => onFilter("watched")}>Watched</button>
+        </div>
+    )
+}
 
-
-const Sidebar = ({ onSelect }) => (
-  <div className="sidebar">
-    <button onClick={() => onSelect('home')}>Home</button>
-    <button onClick={() => onSelect('watched')}>Watched</button>
-    <button onClick={() => onSelect('liked')}>Liked</button>
-  </div>
-);
 export default Sidebar;
+

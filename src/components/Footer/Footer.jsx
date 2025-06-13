@@ -1,7 +1,7 @@
 import React from "react";
 import './Footer.css';
 
-
+// exports the function which is whitespace with text
 export default function Footer (){
     return (
         <footer className ="footer-box">

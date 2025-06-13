@@ -3,47 +3,71 @@ import MovieCard from "../MovieCard/MovieCard";
 import './MovieList.css';
 import SortBox from "../SortBox/SortBox.jsx";
 import { useState } from "react";
-import { useEffect } from "react";
-import {SideBar} from "../Sidebar/Sidebar.jsx";
+import Sidebar from "../Sidebar/Sidebar.jsx";
+
 //renders the movies, going to use grid for this
 const MovieList = ({movies}) => {
-    const [sortedMovies, setSortedMovies] = useState(movies);
+    const [sortedMovies, setSortedMovies] = useState(movies); //movies for sorted
     const [isSorted, setIsSorted] = useState(false); // so we can choose which one to use for movielist
-
-
-
-    // we are gonna pass up each moviecard that is liked or watched out of sortedMovies
-    //then we pass those arrays into sideBar child component
-    const [likedCards, setLikedCards] = useState([]); //add the cards that arer liked to an array
+    const [likedCards, setLikedCards] = useState([]); //add the cards that are liked to an array
     const [watchedCards,setWatchedCards] = useState([]); //add caerds that have been watched to am array
 
-    //change to cards sorted
+    //change to cards sorted for render
     const changeSort = (sortedData =>{
         setSortedMovies(sortedData); //change sortedMovies
         setIsSorted(true);
     })
 
-    // change to cards selected by sidebar- for sidebar!
-    const changeCards = (filterType =>{
-        setSortedMovies(changedCards);
-    })
+    // updates likedCards when moviecard is liked, appends on to the end
+    const handleLike = (data) =>{
+        setLikedCards((prevLiked) => [...prevLiked,data])
+        console.log(likedCards);
+
+    }
+    //updates watched cards when moviecard is click as watched ,onto the end
+    const handleWatch = (data) =>{
+        setWatchedCards((prevWatched) => [...prevWatched,data])
+        console.log(watchedCards);
+    }
 
 
+    //displays likedCards or WatchedCards when sidebar is clicked
+    const handleFilterChange = (filterType) => {
+        switch (filterType) {
+            case 'liked':
+                setSortedMovies(likedCards)
+                setIsSorted(true);
+                break;
+            case 'watched':
+                setSortedMovies(watchedCards)
+                setIsSorted(true);
+                break;  
 
+            case 'home':
+                setSortedMovies(movies)
+                setIsSorted(true);
+                break;
+
+            default:
+                setSortedMovies(movies)
+                setIsSorted(true);
+            // do nothing
+        }
+    };
 
 
     return(
         <div>
         <SortBox onSort={(changeSort)} movies={movies}/>
             <div className="movies-list">
-            <Sidebar onSelect = {(changeCards)} movies = {movies} />
+            <Sidebar onFilter = {(handleFilterChange)} movies = {movies}/>
             {isSorted ? (
                 sortedMovies.map((movie) => ( 
-                <MovieCard key={movie.id} data={movie} /> //if has been called to sort sorted movies has been updated
+                <MovieCard key={movie.id} data={movie} onLike = {handleLike} onWatch={handleWatch}/> //if has bee sorted
                 ))
             ) : (
                 movies.map((movie) => (
-                <MovieCard key={movie.id} data={movie} /> //if hasnt been called to sort
+                <MovieCard key={movie.id} data={movie} onLike = {handleLike} onWatch={handleWatch}/> //if hasnt been called to sort
                 ))
             )}
             </div>

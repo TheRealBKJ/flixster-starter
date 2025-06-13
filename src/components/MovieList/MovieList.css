@@ -1,14 +1,26 @@
 .movies-list {
   display: flex;
   flex-wrap: wrap;
-  grid-template-columns: repeat(4,1fr) ;
   max-width: 100%;
   background-color: #050505;
-  border: 5px  solid rgb(0, 0, 0);
-  gap: 10px;
+  border: 5px solid rgb(0, 0, 0);
+  gap: 1em;
   box-sizing: border-box;
 }
 
+/* Limit to 2 columns on medium screens */
+@media (max-width: 768px) {
+  .movies-list {
+    justify-content: center;
+  }
+  .movies-list > * {
+    flex-basis: calc(50% - 1em); /* subtract gap size */
+  }
+}
 
-
-
+/* Limit to 1 column on small screens */
+@media (max-width: 480px) {
+  .movies-list > * {
+    flex-basis: 100%;
+  }
+}
