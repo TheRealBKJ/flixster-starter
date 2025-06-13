@@ -101,7 +101,7 @@ Deployed Application https://flixster-starter-uhzx.onrender.com/
 ### Walkthrough Video
 
 
-`<div style="position: relative; padding-bottom: 49.895833333333336%; height: 0;"><iframe src="https://www.loom.com/embed/f1597bad2b554c828c11025fbb6e1f33?sid=190b6eea-894c-46aa-99bd-1da3d44c1439" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>`
+<div style="position: relative; padding-bottom: 49.895833333333336%; height: 0;"><iframe src="https://www.loom.com/embed/f1597bad2b554c828c11025fbb6e1f33?sid=190b6eea-894c-46aa-99bd-1da3d44c1439" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Reflection
 
