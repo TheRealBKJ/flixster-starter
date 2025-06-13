@@ -13,7 +13,12 @@ export default function SearchBar({sendData}) {
     setUserInput(value);
   };
 
-
+  // if enter is hit on search
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      searchValues();
+    }
+  };
   //fetches from movies api and returns the data that matches when button is clicked
   const searchValues = () => {
     fetchMovies(
@@ -44,6 +49,7 @@ export default function SearchBar({sendData}) {
         onChange={grabSearch} //tracks input
         type="text"
         value={userInput} //show user what they typed
+        onKeyDown={handleKeyDown}
         placeholder="Search"
         className = "input-box"
       />

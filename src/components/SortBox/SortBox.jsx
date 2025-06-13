@@ -48,7 +48,7 @@ export default function SortBox({onSort, movies}){
             >
                 <option disabled value="0">None</option>
                 <option value="title">Title(A-Z)</option>
-                <option value="releaseDate">Most Recent</option>
+                <option value="releaseDate">Release Date(Most Recent)</option>
                 <option value="voteAverage">Vote Average</option>
             </select>
         </div>
