@@ -100,7 +100,14 @@ Deployed Application https://flixster-starter-uhzx.onrender.com/
 
 ### Walkthrough Video
 
-   <div style="position: relative; padding-bottom: 49.895833333333336%; height: 0;"><iframe src="https://www.loom.com/embed/f1597bad2b554c828c11025fbb6e1f33?sid=9c8136f7-0282-4e10-8152-e86e0c762856" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+   <div>
+    <a href="https://www.loom.com/share/f1597bad2b554c828c11025fbb6e1f33">
+      <p>Videos | Library | Loom - 13 June 2025 - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/f1597bad2b554c828c11025fbb6e1f33">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/f1597bad2b554c828c11025fbb6e1f33-9a0deb913822cdc7-full-play.gif">
+    </a>
+  </div>
 
 ### Reflection
 
