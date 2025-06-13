@@ -5,7 +5,6 @@ import { useState } from "react";
 const BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 
-
 const MovieCard = ({ data }) => {
 
     const [isModalOpen, setModalOpen] = useState(false);

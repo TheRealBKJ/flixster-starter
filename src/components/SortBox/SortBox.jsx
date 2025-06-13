@@ -1,21 +1,24 @@
 import { useState } from "react";
 import React from "react";
 import "./SortBox.css";
-
-//onSort is the parent statement i will use in movie list
-//movies is the data passed on
-// i need to define the dropdown menu and do a sleection and a big if and else change
-// after that I return back the sorted list :)
-
+import { useEffect } from "react";
 export default function SortBox({onSort, movies}){
+    const [sortByValue, setSortByValue] = useState('0'); // Initialize with the default value
+   
+    useEffect(() => {
+        if (sortByValue !== '0') {
+            sortBy(sortByValue);
+        }
+    }, [sortByValue]);
     const sortBy = (criteria) =>{
-        let sortedData;//we are changing this variable based on switch statement
+        let sortedData = [...movies]//we are changing this variable based on switch statement
+
         switch(criteria) { //sort by title
             case'title':
-                sortedData = movies.sort((a,b) => a.title.localeCompare(b.title));
+                sortedData.sort((a,b) => a.title.localeCompare(b.title));
                 break;
             case'releaseDate'://sort by date
-                sortedData = movies.sort((a,b) => {
+                sortedData.sort((a,b) => {
                     const dateA = new Date(a.release_date);
                     const dateB = new Date(b.release_date);
                     return dateA - dateB;
@@ -23,35 +26,31 @@ export default function SortBox({onSort, movies}){
                 break;
 
             case 'voteAverage': //sort by voting average
-                sortedData= movies.sort((a,b) => b.vote_average - a.vote_average );
+                sortedData.sort((a,b) => b.vote_average - a.vote_average );
                 break;
 
             default:
-                sortedData = movies
+                sortedData = movies;
         }
         onSort(sortedData);//send to parent function which is movieList
-
-
-
-
-        
     }
-    //added a function for a resort button that puts back to og state
 
-
-
-
-    //build select box for input
     return (
         <div className="sort-box">
             <label>Sort By:</label>
-            <select className="drop-down" onChange={(e) => sortBy(e.target.value)}>
-                <option disabled selected value="0">Search By</option>
+            <select 
+                className="drop-down" 
+                value={sortByValue} // Set the value prop
+                onChange={(e) => {
+                    setSortByValue(e.target.value); // Update the state
+                    sortBy(e.target.value);
+                }}
+            >
+                <option disabled value="0">Search By</option>
                 <option value="title">Title(A-Z)</option>
                 <option value="releaseDate">Most Recent</option>
                 <option value="voteAverage">Vote Average</option>
             </select>
         </div>
     )
-
 }

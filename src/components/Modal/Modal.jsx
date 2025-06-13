@@ -61,7 +61,6 @@ export default function Modal({movieId}){
     const findFirstTrailer = (data) => {
         setTrailer(data.results.find((result) => result.type === 'Trailer'));
     };
-
     // Use useEffect to fetch data and open modal when data is available
     useEffect(() => {
         if (movieId) {
@@ -69,6 +68,7 @@ export default function Modal({movieId}){
         returnTrailer(); // call it when we load the modal video as well
         }
     }, [movieId]);
+
     // Open modal when movieData is set
     useEffect(() => {
         if (movieData) {
@@ -115,7 +115,7 @@ export default function Modal({movieId}){
                     <div className="close-genre-container">
                         <ul className="genre-text">
                             <p className= "genre-header">Genres:</p>
-                            {(movieData.genres)?.map((genre) => (// shoutout StackOVerFLOW, found a fix to the issue of map in seconds
+                            {(movieData.genres)?.map((genre) => (//fix the map function
                                 <li key={genre.id}>{genre.name}</li> 
                             ))} {/* Append list items using map*/}
                         </ul>
