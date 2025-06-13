@@ -1,26 +1,28 @@
 .movies-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 6 cards per row on large screens */
+  gap: 1em;
   max-width: 100%;
   background-color: #050505;
   border: 5px solid rgb(0, 0, 0);
-  gap: 1em;
   box-sizing: border-box;
+  padding: 1em;
 }
-
-/* Limit to 2 columns on medium screens */
+/* Medium screens: 4 cards per row */
+@media (max-width: 1200px) {
+  .movies-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* Tablets: 2 cards per row */
 @media (max-width: 768px) {
   .movies-list {
-    justify-content: center;
-  }
-  .movies-list > * {
-    flex-basis: calc(50% - 1em); /* subtract gap size */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* Limit to 1 column on small screens */
+/* Phones: 1 card per row */
 @media (max-width: 480px) {
-  .movies-list > * {
-    flex-basis: 100%;
+  .movies-list {
+    grid-template-columns: 1fr;
   }
 }

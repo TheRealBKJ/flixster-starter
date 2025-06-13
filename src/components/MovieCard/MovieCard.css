@@ -1,19 +1,18 @@
-.movie-card{ 
-    background-color: grey;
-    border: 0.625em solid rgb(236, 202, 6);
-    border-radius: 0.80em;
-    margin-top: 5%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0.25em 0.625em rgba(255, 0, 0, 0.2);
-    display: inline-block;
-    cursor: pointer;
-    margin-left: 6.5%;
-    width: 15%;
-    height: 20%;
-
+.movie-card {
+  background-color: grey;
+  border: 0.3em solid rgb(236, 202, 6);
+  border-radius: 0.5em;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0.15em 0.3em rgba(255, 0, 0, 0.15);
+  cursor: pointer;
+  width: 100%;      /* Let grid control the width */
+  height: auto;     /* Let content dictate height */
+  margin: 0;        /* Remove left margin */
+  padding: 0.5em;   /* Add a little padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-
 .movie-card:hover{
     transform: scale(1.05); /* Slightly enlarge the card */
      /* Add a shadow for depth */
@@ -22,7 +21,7 @@
 .title{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 25px;
 
 }
 
@@ -30,7 +29,7 @@
 .votes{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 20px;
 
 }
 
